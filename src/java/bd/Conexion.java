@@ -1,7 +1,7 @@
 /*
  Autor:Vicente Leonel Vásquez Hernádez
   fecha creación: 08-03-2022
-  fecha actualización:
+  fecha actualización: 09-03-2022
   Descripción: clase Conexion
  */
 package bd;
@@ -10,11 +10,11 @@ import java.sql.*;
 
 
 public class Conexion {
-
-    private final Connection connection;
-    private final String url;
-    private final String user;
-    private final String pwd;
+    public Connection conexion;
+    private Connection connection;
+    private  String url;
+    private  String user;
+    private  String pwd;
 
     public Conexion() {
 
@@ -27,20 +27,39 @@ public class Conexion {
         this.pwd = pwd;
     }
 
-    public void conectar() {
-
-    }
-
-    public void desconectar() {
-
-    }
-
-    public Connection getConnection() {
+    public Connection conectar() {
+     url="jdbc:postgresql://localhost/Sportswear";
+        user="postgres";
+        pwd="leonel92";
+        try{
+            Class.forName("org.postgresql.Driver");
+            conexion=DriverManager.getConnection(url,user,pwd);
+            System.out.println("conexion establecida");
+             
+        }catch(Exception ex){
+            System.out.println("1"+ex);
+        }
+        
         return connection;
     }
 
-    public static void main(String[] args) {
+    public void desconectar() {
+        try{
+           conexion.close();
+            System.out.println("cerrando conexion...");
+        }catch(Exception ex){
+            System.out.println("2"+ex);
+        }
+    }
+
+    /*public Connection getConnection() {
         
+    }*/
+
+    public static void main(String[] args) {
+        Conexion con =new Conexion();
+        con.conectar();
+        con.desconectar();
         
     }
 

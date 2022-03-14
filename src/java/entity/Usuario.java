@@ -6,14 +6,17 @@
  */
 package entity;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.UsuarioModelImpl;
 
 
 public class Usuario extends Persona{
     private String codigo;
     private String nombreUsuario;
     private String contraseña;
+    private static Usuario usuario;
 
     public Usuario() {
     }
@@ -48,15 +51,15 @@ public class Usuario extends Persona{
         this.contraseña = contraseña;
     }
     
-      public static void main(String[] args) {
+      public static void main(String[] args) throws SQLException {
         Usuario u1=new Usuario();
         u1.setCodigo("123");
         u1.setNombreUsuario("Leonel");
         u1.setContraseña("abc12");
-        u1.setEdad(30);
-        u1.setSexo("Masculino");
+       // u1.setEdad(30);
+        //u1.setSexo("Masculino");
         
-        Usuario u2=new Usuario();
+       /* Usuario u2=new Usuario();
         
         u2.setCodigo("1234");
         u2.setNombreUsuario("Maria");
@@ -85,7 +88,12 @@ public class Usuario extends Persona{
             System.out.println("Edad: "+i.getEdad());
             System.out.println("Sexo: "+i.getSexo());
             System.out.println("\n");
-        }
+        }*/
+        
+          //UsuarioModelImpl um = new UsuarioModelImpl();
+
+      //  um.crearRegistro(usuario);
+        
         
     }
     

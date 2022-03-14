@@ -8,7 +8,7 @@ package entity;
 
 public abstract class Persona {
 
-    private String usuario;
+    String usuario;
     private String sexo;
     private int edad;
 

@@ -14,7 +14,7 @@ public interface IUsuarioModel {
 public void crearRegisto(Usuario usuario);
 public void actualizarRegistro(Usuario usuario);
 public List<Usuario>obtenerRegistros();
-public Usuario obtenerRegistro(String idUsuario);
+public Usuario obtenerRegistro(String codigo);
 public void eliminarResgistro(String codigo);
 //public void eliminarResgistro(int idUsuario);
 

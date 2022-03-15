@@ -157,17 +157,28 @@ public class UsuarioModelImpl implements IUsuarioModel {
         Usuario u = new Usuario();
 
         u.setCodigo("1234");
-        u.setNombreUsuario("luis");
+        u.setNombreUsuario("pedro");
         u.setContraseña("ab");
-        // um.crearRegistro(u);
-        // um.actualizarRegistro(u);
-        // um.eliminarResgistro("1233");
-        //  um.obtenerRegistros();
-        // System.out.println(um.obtenerRegistros().toString());
-        //um.obtenerRegistros();
+        //um.crearRegistro(u);
+       um.actualizarRegistro(u);
+       // um.eliminarResgistro("1233");
+       // um.obtenerRegistros();
+       // System.out.println(um.obtenerRegistros());
+        
+        List<Usuario> listaUsuario = um.obtenerRegistros();
+        
+        for(Usuario usr:listaUsuario){
+            System.out.println("Nombre: " + usr.getNombreUsuario());
+            System.out.println("Contraseña: " + usr.getContraseña());
+            System.out.println("Codigo: " + usr.getCodigo());
+        }
+        
+        //obtener 
+        Usuario u1 = new Usuario();
+        u1 = um.obtenerRegistro("1234");
+        System.out.println("Un usuario: " +u1.getNombreUsuario());
 
-        //System.out.println(um.obtenerRegistro("123"));  
-        // um.obtenerRegistro("1233");
+        
     }
 
 }
